@@ -36,4 +36,4 @@ La idea nace como un proyecto personal con el ánimo de unir las áreas del desa
 
 ## Sobre mí
 
-Me llamo Edilson Sarmiento y soy ingeniero mecánico. Soy un entusiasta del desarrollo de software y deseo poder crear herramientas útiles. A la fecha, estoy aprendiendo sobre desarrollo de software en distintos lenguajes, con lo cual mis primeros proyectos pueden parecer básicos. Sin embargo, es el camino para lograr a futuro productos de mayor calidad.
+Me llamo Edilson Sarmiento y soy ingeniero mecánico. Soy un entusiasta del desarrollo de software y deseo poder crear herramientas útiles. A la fecha, estoy aprendiendo sobre desarrollo de software en distintos lenguajes, con lo cual mis primeros proyectos pueden parecer básicos. Sin embargo, es el camino para lograr a futuro productos de mayor calidad. Me puedes contactar a través de mi correo electrónico [edilsarmientoa@gmail.com].
