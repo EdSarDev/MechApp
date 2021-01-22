@@ -7,7 +7,7 @@ Es una aplicación que contiene diversas herramientas para apoyar el proceso de 
 
 ## Uso de la aplicación
 
-La aplicación (por ahora) es un archivo Java ejecutabele (* *.jar*). La puedes encontrar en la dirección: ``` \dist\MechApp_Java.jar ```.
+La aplicación (por ahora) es un archivo Java ejecutable (* *.jar*). La puedes encontrar en la dirección: ``` \dist\MechApp_Java.jar ```.
 
 
 ## Características de desarrollo
