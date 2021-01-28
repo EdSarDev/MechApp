@@ -2,8 +2,9 @@
 
 ¿Qué es MechApp? 
 
-Es una aplicación que contiene diversas herramientas para apoyar el proceso de diseño y análisis en ingeniería mecánica. La aplicación pretende ahorrar tiempo y esfuerzo en los cálculos necesarios para estas labores. 
+Es una aplicación que contiene diversas herramientas para apoyar el proceso de diseño y análisis en ingeniería mecánica. La aplicación pretende ahorrar tiempo y esfuerzo en los cálculos necesarios para estas labores. El nombre es derivado de las palabras en inglés "Mechanical" y "Application".
 
+![alt text](https://raw.githubusercontent.com/EdilsonSarmiento/MechApp/main/src/MechApp/vista/images/MechApp_logo_medium.PNG?raw=true)
 
 ## Uso de la aplicación
 
