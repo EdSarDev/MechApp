@@ -54,8 +54,6 @@ public class MecanicaMateriales {
         } else {
             dostheta_p2 = dostheta_p - Math.PI;
         };
-        System.out.println(dostheta_p1*180/Math.PI);
-        System.out.println(dostheta_p2*180/Math.PI);
         
         double sigma_x1aux = ((sigma_x + sigma_y)/2) + (((sigma_x - sigma_y)/2) * Math.cos(dostheta_p1))
                 + (tau_xy * Math.sin(dostheta_p1));
