@@ -18,10 +18,11 @@ public class MecanicaMateriales {
     /* Función que calcula los esfuerzos planos en un elemento con inclinación
     
     Argumentos: 
-        esfuerzos: arreglo que contiene los esfueroz sigma_x, sigma_y y tau_xy
-        theta : ángulo de inclinación del elemento infinitesimal
+        esfuerzos: arreglo que contiene los esfueroz [sigma_x, sigma_y, tau_xy]
+        theta : ángulo de inclinación del elemento infinitesimal en grados
     Salida:
-        Arreglo = [sigma_x1, sigma_y1, tau_x1y1, sigma_1, sigma_2]
+        Arreglo = [sigma_x1, sigma_y1, tau_x1y1, sigma_1, sigma_2, theta_p1, theta_p2, 
+            tau_max, theta_s1, tau_min, theta_s2]
     */
         double sigma_x, sigma_y, tau_xy;
         sigma_x = esfuerzos[0];
@@ -29,7 +30,7 @@ public class MecanicaMateriales {
         tau_xy = esfuerzos[2];
         theta = theta * Math.PI/180; // [grados --> rad]
 
-        // Cálculo de esfuerzos en ejes y planos inclinados
+        // Cálculo de esfuerzos normales en ejes y planos inclinados
         double sigma_x1 = ((sigma_x + sigma_y)/2) + (((sigma_x - sigma_y)/2) * Math.cos(2*theta))
                 + (tau_xy * Math.sin(2*theta));
         double sigma_y1 = ((sigma_x + sigma_y)/2) - (((sigma_x - sigma_y)/2) * Math.cos(2*theta))
@@ -37,10 +38,9 @@ public class MecanicaMateriales {
         double tau_x1y1 = (tau_xy * Math.cos(2*theta)) - (((sigma_x - sigma_y)/2) * Math.sin(2*theta));
         
         // Esfuerzos principales
-        double sigma_1 = ((sigma_x+sigma_y)/2) + 
-                Math.sqrt((Math.pow((sigma_x-sigma_y)/2, 2))+(Math.pow(tau_xy, 2)));
-        double sigma_2 = ((sigma_x+sigma_y)/2) - 
-                Math.sqrt((Math.pow((sigma_x-sigma_y)/2, 2))+(Math.pow(tau_xy, 2)));
+        double R = Math.sqrt((Math.pow((sigma_x-sigma_y)/2, 2))+(Math.pow(tau_xy, 2)));
+        double sigma_1 = ((sigma_x+sigma_y)/2) + R;
+        double sigma_2 = ((sigma_x+sigma_y)/2) - R;
         
         // Ángulos principales
         double dostheta_p = Math.atan(2*tau_xy/(sigma_x - sigma_y));
@@ -66,11 +66,19 @@ public class MecanicaMateriales {
             theta_p1 = (dostheta_p2)/2;
             theta_p2 = (dostheta_p1)/2;
         };
-        theta_p1 = theta_p1 * 180/Math.PI;
+        theta_p1 = theta_p1 * 180/Math.PI; // [rad --> grados]
         theta_p2 = theta_p2 * 180/Math.PI;
-     
+        
+        // Esfuerzos cortantes máximos y mínimos
+        double tau_max = R;
+        double theta_s1 = theta_p1 - 45; // [grados]
+        double tau_min = -tau_max;
+        double theta_s2 = theta_s1 - 90; // [grados]
+        
+        // Resultados
         double[] esfuerzosInclinado = 
-            {sigma_x1, sigma_y1, tau_x1y1, sigma_1, sigma_2, theta_p1 , theta_p2};
+            {sigma_x1, sigma_y1, tau_x1y1, sigma_1, sigma_2, theta_p1, theta_p2, 
+            tau_max, theta_s1, tau_min, theta_s2};
         return esfuerzosInclinado;
     };
 }
