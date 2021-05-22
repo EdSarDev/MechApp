@@ -27,6 +27,7 @@ Los módulos con que contará la aplicación son:
 - Mecánica de Fluidos (Próximamente)
 - Mecánica de Materiales (Actual)
 - Termodinámica técnica (Próximamente)
+- Herramientas matemáticas básicas (Próximamente)
 - Otras (Próximamente)
 
 
